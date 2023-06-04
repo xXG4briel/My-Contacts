@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="customer-container flex" style="margin: 0 auto;max-width: 1200px;flex-wrap: wrap;align-items: center;justify-content: space-between;">
+    </div>
+
+    <button onclick="handleAddDepoiment()" id="btn-add-depoiment" style="margin: 0 auto;display: flex;background: none;border-radius: 2px;border: 1px solid #E8E8E8;color: #282828;cursor: pointer;padding: 6px 12px;">Mostrar mais depoimentos</button>
+    background: #E8E8E8;
+    <script>
+        let c = 5;
+        const depoiments = [
+            {
+                imgURL: "https://cdn.shopify.com/s/files/1/0606/7598/1545/products/S3018ea609dcf472ab2c5b077dad60f795_300x.jpg?v=1681421616",
+                customerName: "Amuleto Chaveiro",
+                customerDate: "01/01/01",
+                link: "amuleto-chaveiro-feng-shui-atrai-boas-energias-sorte-feito-a-mao",
+                starts: "⭐⭐⭐⭐⭐",
+                depoimentDescriptionTitle: "TESTE TESTE",
+                depoimentDescription: "TESTE TESTE TESTE TESTE"
+            },
+            {
+                imgURL: "https://cdn.shopify.com/s/files/1/0606/7598/1545/products/Hc6ed2c679b354a1586bc95ae4419bfab6_600x.jpg?v=1681332321",
+                customerName: "Amuleto Pixiu Dragão",
+                customerDate: "01/01/01",
+                link: "amuleto-pixiu-dragao-chaveiro-da-sorte",
+                starts: "⭐⭐⭐⭐⭐",
+                depoimentDescriptionTitle: "TESTE TESTE",
+                depoimentDescription: "TESTE TESTE TESTE TESTE"
+            },
+            {
+                imgURL: "https://cdn.shopify.com/s/files/1/0606/7598/1545/products/AneldaRiquezaeProsperidadeFengShui-GaneshaDourado_d0146db3-4ec1-4b44-ae5e-fd6df365f796_600x.png?v=1681669490",
+                customerName: "Anel da Riqueza",
+                customerDate: "01/01/01",
+                link: "anel-da-riqueza-e-prosperidade-feng-shui-edicao-limitada-promocao-frete-gratis",
+                starts: "⭐⭐⭐⭐⭐",
+                depoimentDescriptionTitle: "TESTE TESTE",
+                depoimentDescription: "TESTE TESTE TESTE TESTE"
+            },
+            {
+                imgURL: "https://cdn.shopify.com/s/files/1/0606/7598/1545/products/Sb9bea8d314114c3b99cfb52fc20e65adm_600x.jpg?v=1681737773",
+                customerName: "Anel Dragão da Fortuna",
+                customerDate: "01/01/01",
+                link: "anel-dragao-da-fortuna-feng-shui",
+                starts: "⭐⭐⭐⭐⭐",
+                depoimentDescriptionTitle: "TESTE TESTE",
+                depoimentDescription: "TESTE TESTE TESTE TESTE"
+            },
+            {
+                imgURL: "https://cdn.shopify.com/s/files/1/0606/7598/1545/products/S3018ea609dcf472ab2c5b077dad60f795_300x.jpg?v=1681421616",
+                customerName: "Amuleto Chaveiro",
+                customerDate: "01/01/01",
+                link: "amuleto-chaveiro-feng-shui-atrai-boas-energias-sorte-feito-a-mao",
+                starts: "⭐⭐⭐⭐⭐",
+                depoimentDescriptionTitle: "TESTE TESTE",
+                depoimentDescription: "TESTE TESTE TESTE TESTE"
+            },
+            {
+                imgURL: "https://cdn.shopify.com/s/files/1/0606/7598/1545/products/Hc6ed2c679b354a1586bc95ae4419bfab6_600x.jpg?v=1681332321",
+                customerName: "Amuleto Pixiu Dragão",
+                customerDate: "01/01/01",
+                link: "amuleto-pixiu-dragao-chaveiro-da-sorte",
+                starts: "⭐⭐⭐⭐⭐",
+                depoimentDescriptionTitle: "TESTE TESTE",
+                depoimentDescription: "TESTE TESTE TESTE TESTE"
+            },
+            {
+                imgURL: "https://cdn.shopify.com/s/files/1/0606/7598/1545/products/AneldaRiquezaeProsperidadeFengShui-GaneshaDourado_d0146db3-4ec1-4b44-ae5e-fd6df365f796_600x.png?v=1681669490",
+                customerName: "Anel da Riqueza",
+                customerDate: "01/01/01",
+                link: "anel-da-riqueza-e-prosperidade-feng-shui-edicao-limitada-promocao-frete-gratis",
+                starts: "⭐⭐⭐⭐⭐",
+                depoimentDescriptionTitle: "TESTE TESTE",
+                depoimentDescription: "TESTE TESTE TESTE TESTE"
+            },
+            {
+                imgURL: "https://cdn.shopify.com/s/files/1/0606/7598/1545/products/Sb9bea8d314114c3b99cfb52fc20e65adm_600x.jpg?v=1681737773",
+                customerName: "Anel Dragão da Fortuna",
+                customerDate: "01/01/01",
+                link: "anel-dragao-da-fortuna-feng-shui",
+                starts: "⭐⭐⭐⭐⭐",
+                depoimentDescriptionTitle: "TESTE TESTE",
+                depoimentDescription: "TESTE TESTE TESTE TESTE"
+            },
+            {
+                imgURL: "https://cdn.shopify.com/s/files/1/0606/7598/1545/products/S3018ea609dcf472ab2c5b077dad60f795_300x.jpg?v=1681421616",
+                customerName: "Amuleto Chaveiro",
+                customerDate: "01/01/01",
+                link: "amuleto-chaveiro-feng-shui-atrai-boas-energias-sorte-feito-a-mao",
+                starts: "⭐⭐⭐⭐⭐",
+                depoimentDescriptionTitle: "TESTE TESTE",
+                depoimentDescription: "TESTE TESTE TESTE TESTE"
+            },
+            {
+                imgURL: "https://cdn.shopify.com/s/files/1/0606/7598/1545/products/Hc6ed2c679b354a1586bc95ae4419bfab6_600x.jpg?v=1681332321",
+                customerName: "Amuleto Pixiu Dragão",
+                customerDate: "01/01/01",
+                link: "amuleto-pixiu-dragao-chaveiro-da-sorte",
+                starts: "⭐⭐⭐⭐⭐",
+                depoimentDescriptionTitle: "TESTE TESTE",
+                depoimentDescription: "TESTE TESTE TESTE TESTE"
+            },
+            {
+                imgURL: "https://cdn.shopify.com/s/files/1/0606/7598/1545/products/AneldaRiquezaeProsperidadeFengShui-GaneshaDourado_d0146db3-4ec1-4b44-ae5e-fd6df365f796_600x.png?v=1681669490",
+                customerName: "Anel da Riqueza",
+                customerDate: "01/01/01",
+                link: "anel-da-riqueza-e-prosperidade-feng-shui-edicao-limitada-promocao-frete-gratis",
+                starts: "⭐⭐⭐⭐⭐",
+                depoimentDescriptionTitle: "TESTE TESTE",
+                depoimentDescription: "TESTE TESTE TESTE TESTE"
+            },
+            {
+                imgURL: "https://cdn.shopify.com/s/files/1/0606/7598/1545/products/Sb9bea8d314114c3b99cfb52fc20e65adm_600x.jpg?v=1681737773",
+                customerName: "Anel Dragão da Fortuna",
+                customerDate: "01/01/01",
+                link: "anel-dragao-da-fortuna-feng-shui",
+                starts: "⭐⭐⭐⭐⭐",
+                depoimentDescriptionTitle: "TESTE TESTE",
+                depoimentDescription: "TESTE TESTE TESTE TESTE"
+            },
+        ]
+
+        
+        function handleAddDepoiment() {
+            const depoimentsFilter = depoiments.slice(0, c);
+            
+            const container = document.querySelector('.customer-container')
+            const conteudo = document.createElement('div');
+            container.appendChild(conteudo);
+    
+            container.innerHTML =
+            depoimentsFilter.map(({imgURL, customerName, starts, depoimentDescription, depoimentDescriptionTitle}) => 
+                 `
+                    <div class="customer-card" style="overflow: hidden;margin:0 0 16px">
+                        <img src=${imgURL} alt="" style="width: 100%;height: 26.6666666667vw;">
+                        <main style="padding: 8px;">
+                            <header class="flex" style="flex-direction: column">
+                                <span style="font-weight: 700;">${customerName}</span>
+                                <span style="margin-bottom: 8px;">${starts}</span>
+                            </header>
+                            
+                            <div class="card-text" style="overflow: hidden;">
+                                <p>${depoimentDescriptionTitle}</p>
+                            </div>
+                        </main>
+                        <footer class="card-footer flex" style="border-top: 1px solid #c4c4c4;padding: 8px;">
+                            <img src=${imgURL} alt="" class="img-footer" style="min-width: 60px;min-height: 60px;width: 60px;height: 60px;">
+                            <div class="card-text footer" style="overflow: hidden;">
+                                <p style="margin-bottom: 8px;margin-left: 8px">${depoimentDescription}</p>
+                            </div>
+                        </footer>
+                    </div>
+                `
+            ).join('');
+            console.log(c, depoiments.length)
+            if (c >= depoiments.length) {
+                const btn = document.querySelector("#btn-add-depoiment");
+                btn.style = "display: none;";
+                return;
+            }
+            c += 5;
+        }
+        handleAddDepoiment();
+
+
+    </script>
+</body>
+</html>

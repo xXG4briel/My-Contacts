@@ -1,0 +1,95 @@
+$primary: #c4c4c4;
+
+.customer-container {
+    margin: 0 auto;
+    max-width: 1200px;
+    p, image {
+        margin: 0;
+    }
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    .customer-card {
+        // min-width: 20vw;
+        overflow: hidden;
+        width: 20vw;
+        max-width: 240px;
+        border: 1px solid $primary;
+        border-radius: 8px;
+        margin: 0 0 16px;
+        .customer-card__image-header {
+            width: 100%;
+            height: calc(20vw + 20vw / 3);
+            background: gray;
+        }
+        .customer-card__info,
+        .customer-card__footer {
+            padding: 8px;
+        }
+        .customer-card__info {
+            .customer-card__header {
+                display: flex;
+                flex-direction: column;
+                span{
+                    font-weight: 700;
+                    margin-bottom: 8px;
+                }
+                .avaliation {
+                    font-size: 16px;
+                }
+                
+            }
+            .customer-card-text {
+                max-height: 75px;
+                overflow: hidden;
+                font-size: 14px;
+            }
+        }
+        .customer-card__footer {
+            border-top: 1px solid $primary;
+            display: flex;
+            .customer-card__image-footer {
+                // flex: 1;
+                // display: block;
+                background: gray;
+                min-width: 60px;
+                min-height: 60px;
+                width: 60px;
+                height: 60px;
+            }
+            p {
+                margin-left: 8px;
+            }
+        }
+    }
+    @media screen and (max-width: 900px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        .customer-card {
+            width: 30vw;
+            margin: 0 auto 16px;
+            .customer-card__info {
+                .customer-card__header {
+                    .avaliation {
+                        font-size: 10px;
+                    }
+                }
+            }
+            .customer-card__footer {
+                .customer-card__image-footer {
+                    min-width: 40px;
+                    min-height: 40px;
+                    width: 40px;
+                    height: 40px;
+                }
+                .customer-card-text {
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    max-height: 75px;
+                }
+            }
+        }
+    }
+}
